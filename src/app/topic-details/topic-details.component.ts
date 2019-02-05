@@ -10,6 +10,7 @@ import { postsImport } from '../mock-posts';
 export class TopicDetailsComponent implements OnInit {
   topicTitle: string;
   topicDescription: string;
+
   posts = postsImport;
 
   constructor(private router: Router, private route: ActivatedRoute) { 
@@ -33,5 +34,4 @@ export class TopicDetailsComponent implements OnInit {
     };
     this.router.navigate(["post", post.id], navigationExtras)
   }
-
 }

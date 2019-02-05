@@ -1,6 +1,7 @@
 import { Topic } from '../app/models/topic.model';
 
 export let array: Topic[] = [
+
     new Topic("General", "General Discussion for all general things"),
     new Topic("GeneralTwo", "General Discussion for all general things"),
     new Topic("GeneralThree", "General Discussion for all general things"),
@@ -25,5 +26,4 @@ export let array: Topic[] = [
     new Topic("AngularTwo", "Angular Discussion for all tech things"),
     new Topic("AngularThree", "Angular Discussion for all tech things"),
     new Topic("AngularFour", "Angular Discussion for all tech things"),
-
 ];

@@ -17,8 +17,9 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     NavBarComponent,
     WelcomeComponent,
     TopicListComponent,
-    TopicDetailsComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    TopicDetailsComponent
+
   ],
   imports: [
     BrowserModule,
