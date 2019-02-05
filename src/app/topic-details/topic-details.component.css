@@ -1,0 +1,17 @@
+#topicHeader {
+    font-size: 35px;
+    text-align: center;
+}
+
+#topicDescription {
+    font-size: 18px;
+    text-align: center;
+}
+
+.postCard {
+    border: 1px solid black;
+}
+
+.postCard:hover {
+    background-color: grey;
+}

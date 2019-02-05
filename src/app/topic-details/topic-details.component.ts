@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { postsImport } from '../mock-posts';
 
 @Component({
   selector: 'app-topic-details',
@@ -10,7 +11,9 @@ export class TopicDetailsComponent implements OnInit {
   topicTitle: string;
   topicDescription: string;
 
-  constructor(private route: ActivatedRoute) { 
+  posts = postsImport;
+
+  constructor(private router: Router, private route: ActivatedRoute) { 
     this.route.queryParams.subscribe(params => {
       this.topicTitle = params["title"];
       this.topicDescription = params["description"];
@@ -20,4 +23,15 @@ export class TopicDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  goToPostDetailPage(post) {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        "title": post.title,
+        "body": post.body,
+        "user": post.user,
+        "id": post.id
+      }
+    };
+    this.router.navigate(["post", post.id], navigationExtras)
+  }
 }

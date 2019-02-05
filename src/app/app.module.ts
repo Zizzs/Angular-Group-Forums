@@ -8,6 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { TopicListComponent } from './topic-list/topic-list.component';
 import { TopicDetailsComponent } from './topic-details/topic-details.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { TopicDetailsComponent } from './topic-details/topic-details.component';
     NavBarComponent,
     WelcomeComponent,
     TopicListComponent,
+    PostDetailsComponent,
     TopicDetailsComponent
+
   ],
   imports: [
     BrowserModule,
