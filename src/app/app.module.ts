@@ -9,6 +9,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { TopicListComponent } from './topic-list/topic-list.component';
 import { TopicDetailsComponent } from './topic-details/topic-details.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     NavBarComponent,
     WelcomeComponent,
     TopicListComponent,
+    TopicDetailsComponent,
     PostDetailsComponent,
-    TopicDetailsComponent
+    NewPostComponent
 
   ],
   imports: [

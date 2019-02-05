@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { postsImport } from '../mock-posts';
+import { Location } from '@angular/common';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
+
 
 @Component({
   selector: 'app-topic-details',
@@ -12,6 +15,7 @@ export class TopicDetailsComponent implements OnInit {
   topicDescription: string;
 
   posts = postsImport;
+  newThread = false;
 
   constructor(private router: Router, private route: ActivatedRoute) { 
     this.route.queryParams.subscribe(params => {
@@ -34,4 +38,9 @@ export class TopicDetailsComponent implements OnInit {
     };
     this.router.navigate(["post", post.id], navigationExtras)
   }
+  
+  openNewThread(){
+    this.newThread = true;
+  }
+
 }
