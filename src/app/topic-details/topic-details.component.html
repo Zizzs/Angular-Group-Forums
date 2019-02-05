@@ -1,2 +1,14 @@
-{{topicTitle}}
-{{topicDescription}}
+<div>
+    <p id="topicHeader">{{topicTitle}}</p>
+</div>
+<hr>
+<div>
+    <p id="topicDescription">{{topicDescription}}</p>
+</div>
+<hr>
+<div *ngFor="let post of posts">
+    <div (click) = "goToPostDetailPage(post)" class="postCard">
+        <p>{{post.title}}</p>
+        <p>{{post.body}}</p>
+    </div>
+</div>
