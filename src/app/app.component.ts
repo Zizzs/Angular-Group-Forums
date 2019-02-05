@@ -11,7 +11,8 @@ export class AppComponent implements OnInit{
   constructor(private postService: PostService){}
 
   ngOnInit(){
-    this.postService.getAllPosts().subscribe((data) => {
+    //fy4BwQ7viua0kOKXkV25
+    this.postService.getComments('fy4BwQ7viua0kOKXkV25').subscribe((data) => {
       console.log(data);
     });
   }
