@@ -13,6 +13,7 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 export class TopicDetailsComponent implements OnInit {
   topicTitle: string;
   topicDescription: string;
+
   posts = postsImport;
   newThread = false;
 
@@ -37,7 +38,7 @@ export class TopicDetailsComponent implements OnInit {
     };
     this.router.navigate(["post", post.id], navigationExtras)
   }
-
+  
   openNewThread(){
     this.newThread = true;
   }

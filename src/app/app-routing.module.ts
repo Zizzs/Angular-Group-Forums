@@ -6,6 +6,7 @@ import { TopicDetailsComponent } from '../app/topic-details/topic-details.compon
 import { PostDetailsComponent } from '../app/post-details/post-details.component';
 import { NewPostComponent } from '../app/new-post/new-post.component';
 
+
 const routes: Routes = [
   {
     path: '',

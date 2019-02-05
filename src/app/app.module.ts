@@ -21,6 +21,7 @@ import { NewPostComponent } from './new-post/new-post.component';
     TopicDetailsComponent,
     PostDetailsComponent,
     NewPostComponent
+
   ],
   imports: [
     BrowserModule,
