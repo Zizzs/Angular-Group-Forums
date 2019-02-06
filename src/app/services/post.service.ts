@@ -145,7 +145,7 @@ export class PostService {
   }
 
   public getTopic(topicId: string): Observable<Topic>{
-    let item = this.db.doc(`posts/${topicId}`);
+    let item = this.db.doc(`topics/${topicId}`);
 
     return item.snapshotChanges().pipe(map((action) => {
      let data:any = action.payload.data();
