@@ -1,0 +1,26 @@
+<div>
+    <p id="topicHeader">{{topicTitle}}</p>
+</div>
+<hr>
+<div>
+    <p id="topicDescription">{{topicDescription}}</p>
+</div>
+<hr>
+<div>
+    <p> <a (click)="openNewThread()">Create a new post</a></p>
+</div>
+<div  *ngIf="newThread">
+    <app-new-post></app-new-post>
+</div>
+<hr>
+
+
+
+<div *ngFor="let post of posts">
+    <div (click) = "goToPostDetailPage(post)" class="postCard">
+        <p>{{post.title}}</p>
+        <p>{{post.body}}</p>
+    </div>
+</div>
+
+

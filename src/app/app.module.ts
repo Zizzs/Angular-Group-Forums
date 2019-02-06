@@ -9,10 +9,25 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { PostService } from './services/post.service';
 import { AuthService } from './services/auth.service';
+import { HeaderComponent } from './header/header.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { TopicListComponent } from './topic-list/topic-list.component';
+import { TopicDetailsComponent } from './topic-details/topic-details.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    NavBarComponent,
+    WelcomeComponent,
+    TopicListComponent,
+    TopicDetailsComponent,
+    PostDetailsComponent,
+    NewPostComponent
+
   ],
   imports: [
     BrowserModule,
