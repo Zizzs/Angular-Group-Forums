@@ -16,11 +16,14 @@ import { TopicListComponent } from './topic-list/topic-list.component';
 import { TopicDetailsComponent } from './topic-details/topic-details.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { NewCommentComponent } from './new-comment/new-comment.component';
+import { CommentDetailsComponent } from './comment-details/comment-details.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +35,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TopicDetailsComponent,
     PostDetailsComponent,
     NewPostComponent,
+
+    NewCommentComponent,
+    CommentDetailsComponent
+
     VerifyEmailComponent,
     SignUpComponent,
     SignInComponent,

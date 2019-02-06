@@ -3,5 +3,9 @@ export class Comment {
         public user: string, 
         public postId: string, 
         public parentId: string = null, 
-        public id: string = null){}
+        public id: string = null
+         //public date: Date
+    ){}
+       
 }
+

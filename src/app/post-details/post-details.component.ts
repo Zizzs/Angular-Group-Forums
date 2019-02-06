@@ -11,6 +11,8 @@ export class PostDetailsComponent implements OnInit {
   postBody;
   postUser;
   postId;
+  newComment=false;
+  comments = ["1","1","1","1","1","1","1","1","1"];
 
 
   constructor(private route: ActivatedRoute) { 
@@ -23,6 +25,10 @@ export class PostDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  openNewComment(){
+    this.newComment=true;
   }
 
 }

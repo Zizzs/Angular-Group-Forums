@@ -1,8 +1,9 @@
 #headerDiv {
-    border-bottom: 1px solid black;
     height: 75px;
 }
 
 #headerText {
     text-align: center;
+    font-family: 'Bungee Shade', cursive;
+    font-size: 50px;
 }

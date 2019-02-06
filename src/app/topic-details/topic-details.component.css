@@ -1,6 +1,7 @@
 #topicHeader {
     font-size: 35px;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #topicDescription {
@@ -9,10 +10,18 @@
 }
 
 .postCard {
-    border: 1px solid black;
+    border: 1px solid #e5e5e5;
     margin: 5px;
+    border-radius: 15px;
 }
 
 .postCard:hover {
-    background-color: grey;
+    border: 1px solid #ffb9b9;
 }
+
+.postTitle {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+}
+

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.button {
+    border: none;
+    color: black;
+    padding: 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 8px;
+    background-color: #e7e7e7;
+  }
+
