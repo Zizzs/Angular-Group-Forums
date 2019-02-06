@@ -31,7 +31,7 @@ export class PostService {
     return this.posts;
   }
 
-  //returns a promise that resolves to an observable returning the result of a query
+  //return all posts for a given topic id
   public getPosts(topicId: string): Observable<Post[]>{
     let topic = this.db.doc(`topics/${topicId}`).ref;
 
@@ -46,6 +46,7 @@ export class PostService {
     }));
   }
 
+  //get a specific post by id
   public getPost(postId: string): Observable<Post>{
     let item = this.db.doc(`posts/${postId}`);
 
@@ -57,6 +58,7 @@ export class PostService {
     }));
   }
 
+  //get all comments for a specific post
   public getComments(postId: string):Observable<Comment[]>{
     let comments = this.db.collection(`posts/${postId}/comments`);
 
@@ -127,6 +129,7 @@ export class PostService {
 
   }
 
+  //return a list of all topics
   public getTopics(): Observable<Topic[]>{
     let topics = this.db.collection('/topics');
 
@@ -138,6 +141,16 @@ export class PostService {
         result.push(new Topic(data.title, data.description, id));
       }
       return result;
+    }));
+  }
+
+  public getTopic(topicId: string): Observable<Topic>{
+    let item = this.db.doc(`posts/${topicId}`);
+
+    return item.snapshotChanges().pipe(map((action) => {
+     let data:any = action.payload.data();
+     let id = action.payload.id;
+     return new Topic(data.title, data.description, id);
     }));
   }
 
