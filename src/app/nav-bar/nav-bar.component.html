@@ -1,10 +1,17 @@
-<div id="navDiv">
-  <p class="navText"><a routerLink=''>Home</a></p>
-  <p class="navText"><a routerLink='topics'>Topics</a></p>
-  <p class="navText">Blah</p>
-  <p class="navText">Blah</p>
-  <p class="navText">Blah</p>
-  <p class="navText">Blah</p>
-  <p class="navText">Blah</p>
-  <p class="navText">Blah</p>
+<div id="mainNavDiv">
+  <div id="navDivOne">
+    <p class="navText" [class.active]="isHomeActive" (click)="isHome()" routerLink=''>Home</p>
+    <p class="navText" [class.active]="isTopicsActive" (click)="isTopics()" routerLink='topics'>Topics</p>
+  </div>
+  <div id="navDivTwo">
+    <p></p>
+    <p class="navText" [class.active]="isUserActive" (click)="isUser()">User</p>
+    <p class="navText">Log Out</p>
+  </div>
 </div>
+
+
+
+<!--   <a href="#" class="header-nav-link" ng-click="app.router.goToDirectory()" ng-mouseup="app.isNavDrawerOpen = false" ng-class="{
+  'is-active': app.router.isDirectory
+}" style="">Directory</a>    -->
