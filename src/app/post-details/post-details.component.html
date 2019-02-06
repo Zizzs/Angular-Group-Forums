@@ -1,7 +1,7 @@
-<p>{{postTitle}}</p>
-<p>{{postBody}}</p>
-<p>{{postUser}}</p>
-<p>{{postId}}</p>
+<p>{{post?.title}}</p>
+<p>{{post?.body}}</p>
+<p>{{post?.user}}</p>
+<p>{{post?.id}}</p>
 
 <div>
     <button class="button" (click)="openNewComment()">New Comment</button>
@@ -12,5 +12,7 @@
 </div>
 
 <div *ngFor="let comment of comments">
-    <app-comment-details></app-comment-details>
+    <div>
+        <h6>{{comment.body}}</h6>
+    </div>
 </div>

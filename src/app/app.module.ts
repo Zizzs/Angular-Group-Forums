@@ -37,7 +37,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NewPostComponent,
 
     NewCommentComponent,
-    CommentDetailsComponent
+    CommentDetailsComponent,
 
     VerifyEmailComponent,
     SignUpComponent,

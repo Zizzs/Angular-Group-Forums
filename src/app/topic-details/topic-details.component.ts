@@ -3,6 +3,8 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { postsImport } from '../mock-posts';
 import { Location } from '@angular/common';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { PostService } from '../services/post.service';
+import { Post } from '../models/post.model';
 
 
 @Component({
@@ -13,30 +15,25 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 export class TopicDetailsComponent implements OnInit {
   topicTitle: string;
   topicDescription: string;
+  topicId;
 
-  posts = postsImport;
+  posts: Post[];
   newThread = false;
 
-  constructor(private router: Router, private route: ActivatedRoute) { 
-    this.route.queryParams.subscribe(params => {
-      this.topicTitle = params["title"];
-      this.topicDescription = params["description"];
-    })
+  constructor(private router: Router, private route: ActivatedRoute, private postService: PostService) { 
+    this.route.params.forEach((urlParameters) => {
+      this.topicId = urlParameters['topic'];
+      this.postService.getPosts(this.topicId).subscribe((posts) => {
+        this.posts = posts;
+      });
+    });
   }
 
   ngOnInit() {
   }
 
   goToPostDetailPage(post) {
-    let navigationExtras: NavigationExtras = {
-      queryParams: {
-        "title": post.title,
-        "body": post.body,
-        "user": post.user,
-        "id": post.id
-      }
-    };
-    this.router.navigate(["post", post.id], navigationExtras)
+    this.router.navigate(["post", post.id]);
   }
   
   openNewThread(){

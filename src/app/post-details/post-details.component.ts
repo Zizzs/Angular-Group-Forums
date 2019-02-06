@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { PostService } from '../services/post.service';
+import { Post } from '../models/post.model';
+import { Comment } from '../models/comment.model';
 
 @Component({
   selector: 'app-post-details',
@@ -7,28 +10,28 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
-  postTitle;
-  postBody;
-  postUser;
-  postId;
-  newComment=false;
-  comments = ["1","1","1","1","1","1","1","1","1"];
+
+  public post: Post;
+  public comments: Comment[];
 
 
-  constructor(private route: ActivatedRoute) { 
-    this.route.queryParams.subscribe(params => {
-      this.postTitle = params["title"];
-      this.postBody = params["body"];
-      this.postUser = params["user"];
-      this.postId = params["id"];
-    })
+  constructor(private route: ActivatedRoute, private postService: PostService) { 
+    this.route.params.forEach((urlParameters) => {
+      let postId = urlParameters['id'];
+      this.postService.getPost(postId).subscribe((post) => {
+        this.post = post;
+      });
+      this.postService.getComments(postId).subscribe((comments) => {
+        this.comments = comments;
+      });
+    });
   }
 
   ngOnInit() {
   }
 
-  openNewComment(){
-    this.newComment=true;
-  }
+  // openNewComment(){
+  //   this.newComment=true;
+  // }
 
 }
