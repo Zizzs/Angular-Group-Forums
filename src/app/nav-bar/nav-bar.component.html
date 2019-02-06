@@ -5,8 +5,10 @@
   </div>
   <div id="navDivTwo">
     <p></p>
-    <p class="navText" [class.active]="isUserActive" (click)="isUser()" routerLink='dashboard'>User</p>
-    <p class="navText">Log Out</p>
+    <p *ngIf="!authService.isLoggedIn"></p>
+    <p *ngIf="authService.isLoggedIn" class="navText" [class.active]="isUserActive"  routerLink='dashboard'>User</p>
+    <p *ngIf="!authService.isLoggedIn" class="navText" routerLink="dashboard">Log In</p>
+    <p *ngIf="authService.isLoggedIn" class="navText" (click)="authService.SignOut()">Log Out</p>
   </div>
 </div>
 
