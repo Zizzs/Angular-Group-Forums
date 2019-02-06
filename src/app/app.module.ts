@@ -10,6 +10,8 @@ import { TopicListComponent } from './topic-list/topic-list.component';
 import { TopicDetailsComponent } from './topic-details/topic-details.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { NewCommentComponent } from './new-comment/new-comment.component';
+import { CommentDetailsComponent } from './comment-details/comment-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { NewPostComponent } from './new-post/new-post.component';
     TopicListComponent,
     TopicDetailsComponent,
     PostDetailsComponent,
-    NewPostComponent
+    NewPostComponent,
+    NewCommentComponent,
+    CommentDetailsComponent
 
   ],
   imports: [
