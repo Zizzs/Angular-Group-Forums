@@ -12,10 +12,11 @@
 .postCard {
     border: 1px solid #e5e5e5;
     margin: 5px;
+    border-radius: 15px;
 }
 
 .postCard:hover {
-    border: 1px solid  black;
+    border: 1px solid #ffb9b9;
 }
 
 .postTitle {
