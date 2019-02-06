@@ -4,6 +4,7 @@ import { Post } from '../models/post.model';
 import { Comment } from '../models/comment.model';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Topic } from '../models/topic.model';
 
 @Injectable({
   providedIn: 'root'
@@ -124,6 +125,20 @@ export class PostService {
       throw new Error("Error: can't create comment with bad references");
     }
 
+  }
+
+  public getTopics(): Observable<Topic[]>{
+    let topics = this.db.collection('/topics');
+
+    return topics.snapshotChanges().pipe(map(actions => {
+      let result: Topic[] = [];
+      for(let action of actions){
+        let data:any = action.payload.doc.data();
+        let id = action.payload.doc.id;
+        result.push(new Topic(data.title, data.description, id));
+      }
+      return result;
+    }));
   }
 
   private parsePost(action: DocumentChangeAction<any>): Post{

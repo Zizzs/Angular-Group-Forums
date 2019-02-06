@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     //fy4BwQ7viua0kOKXkV25
-    this.postService.getPosts('yV5TsXLEO74NRyxR6uc0').subscribe((data) => {
+    this.postService.getTopics().subscribe((data) => {
       console.log(data);
     });
   }
