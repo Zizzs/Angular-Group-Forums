@@ -7,7 +7,7 @@
 </div>
 
 <div>
-    <p> <a (click)="openNewThread()">Create a new post</a></p>
+    <p> <button class="button" (click)="openNewThread()">Create a new post</button></p>
 </div>
 <div  *ngIf="newThread">
     <app-new-post></app-new-post>

@@ -15,6 +15,7 @@ export class PostDetailsComponent implements OnInit {
   public post: Post;
   public comments: Comment[];
   public commentsObservable: Observable<Comment[]>;
+  newComment = false;
 
 
   constructor(private route: ActivatedRoute, private postService: PostService) { 
@@ -33,7 +34,7 @@ export class PostDetailsComponent implements OnInit {
   }
 
   openNewComment(){
-    // this.newComment=true;
+    this.newComment=true;
   }
 
 }

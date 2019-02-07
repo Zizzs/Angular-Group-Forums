@@ -5,12 +5,15 @@
 }
 
 .navText.active {
-    color: #ff5252!important;
+    color: #ff5252;
 }
 
 #mainNavDiv {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    border-bottom: 1px solid black;
 }
 
 #navDivOne {

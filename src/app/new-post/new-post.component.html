@@ -1,7 +1,8 @@
 <div>
   <p>New Thread</p>
   <p>Title</p>
-  <input>
+  <input #newTitle>
   <p>Body</p>
-  <input>
+  <textarea id="textArea" #newBody></textarea>
+  <button (click)="makePost(newTitle.value, newBody.value); newTitle.value=''; newBody.value=''">Post</button>
 </div>
