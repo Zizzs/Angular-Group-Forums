@@ -6,6 +6,7 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { PostService } from '../services/post.service';
 import { Post } from '../models/post.model';
 import { Topic } from '../models/topic.model';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class TopicDetailsComponent implements OnInit {
   posts: Post[];
   newThread = false;
 
-  constructor(private router: Router, private route: ActivatedRoute, private postService: PostService) { 
+  constructor(private router: Router, private route: ActivatedRoute, private postService: PostService, private authService: AuthService) { 
     this.route.params.forEach((urlParameters) => {
       this.topicId = urlParameters['topic'];
       this.postService.getPosts(this.topicId).subscribe((posts) => {

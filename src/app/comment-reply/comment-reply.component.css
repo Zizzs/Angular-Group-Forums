@@ -1,0 +1,9 @@
+#textArea {
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+*:focus {
+    outline: 0;
+    outline: none;
+}

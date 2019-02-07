@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Comment } from '../models/comment.model';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-comment-details',
@@ -7,10 +8,20 @@ import { Comment } from '../models/comment.model';
   styleUrls: ['./comment-details.component.css']
 })
 export class CommentDetailsComponent implements OnInit {
-  constructor() { }
+
+  replyIsTrue = false;
+  constructor(private authService: AuthService) { }
   @Input() comment: Comment;
 
   ngOnInit() {
+  }
+
+  replyToComment() {
+    this.replyIsTrue = true;
+  }
+
+  cancelReply() {
+    this.replyIsTrue = false;
   }
 
 }

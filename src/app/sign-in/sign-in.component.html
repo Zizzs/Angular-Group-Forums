@@ -1,44 +1,50 @@
-<div id="mainDiv" class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign In</h3>
-      <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Username" #userName required>
-      </div>
-
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPassword required>
-      </div>
-
-      <!-- Calling SignIn Api from AuthService -->
-      <div id="mainForm" class="formGroup">
-        <input type="button" class="button" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-      </div>
-
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <!-- Calling GoogleAuth Api from AuthService -->
-      <div class="formGroup">
-        <button type="button" class="button googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Log in with Google
-        </button>
-      </div>
-      <br>
-      <div class="forgotPassword">
-        <button routerLink="/forgot-password">Forgot Password?</button>
-      </div>
-    </div>
-    <br>
-    <div class="redirectToLogin">
-      <span>Don't have an account?<br><button class="redirect" routerLink="/register-user"> Sign Up</button></span>
-    </div>
-    <br>
-    <div class="redirectToLogin">
-      <span>Don't have an account?<br><button class="redirect" routerLink="/home"> Go back to home as a Guest</button></span>
-    </div>
-
+<div id="grid">
+  <div>
+  </div>
+  <div id="mainDiv" class="displayTable">
+        <div class="displayTableCell">
+          <div class="authBlock">
+            <h3>Sign In</h3>
+            <div class="formGroup">
+              <input type="text" class="formControl" placeholder="Username" #userName required>
+            </div>
+      
+            <div class="formGroup">
+              <input type="password" class="formControl" placeholder="Password" #userPassword required>
+            </div>
+      
+            <!-- Calling SignIn Api from AuthService -->
+            <div id="mainForm" class="formGroup">
+              <input type="button" class="button" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+            </div>
+      
+            <div class="formGroup">
+              <span class="or"><span class="orInner">Or</span></span>
+            </div>
+      
+            <!-- Calling GoogleAuth Api from AuthService -->
+            <div class="formGroup">
+              <button type="button" class="button googleBtn" (click)="authService.GoogleAuth()">
+                <i class="fab fa-google-plus-g"></i>
+                Log in with Google
+              </button>
+            </div>
+            <br>
+            <div class="forgotPassword">
+              <button class="button" routerLink="/forgot-password">Forgot Password?</button>
+            </div>
+          </div>
+          <br>
+          <div class="redirectToLogin">
+            <span>Don't have an account?<br><button class="button redirect" routerLink="/register-user"> Sign Up</button></span>
+          </div>
+          <br>
+          <div class="redirectToLogin">
+            <span>Don't have an account?<br><button class="button redirect" routerLink="/home"> Go back to home as a Guest</button></span>
+          </div>
+      
+        </div>
+  </div>
+  <div>
   </div>
 </div>

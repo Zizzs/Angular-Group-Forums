@@ -1,0 +1,15 @@
+#childrenComments {
+    margin-left: 50px;
+}
+
+#mainBlock {
+    margin-left: 25px;
+}
+
+#replyLink:hover {
+    color: #ff5252;
+}
+
+#cancelLink:hover {
+    color: #ff5252;
+}

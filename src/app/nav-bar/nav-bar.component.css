@@ -29,3 +29,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+*:focus {
+    outline: 0;
+    outline: none;
+}

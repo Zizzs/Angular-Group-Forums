@@ -1,21 +1,23 @@
-
-<div>
+<div id="mainBlock">
     <div>
-        <p id="postTitle">{{post?.title}}</p>
+        <div>
+            <p id="postTitle">{{post?.title}}</p>
+        </div>
     </div>
-</div>
 
-<div id="postBody">{{post?.body}}</div>
-<p>{{post?.user}}</p>
-
-
-<div>
-    <button class="button" (click)="openNewComment()">New Comment</button>
-</div>
-<div  *ngIf="newComment">
-    <app-new-comment [post]="post"></app-new-comment>
-</div>
-
-<div *ngIf="comments">
-    <app-comment-list [comments]="comments"></app-comment-list>
+    <div id="postBody">{{post?.body}}</div>
+    <p><strong>{{post?.user}}</strong></p>
+    <hr>
+    <div *ngIf="authService.isLoggedIn">
+        <button class="button" (click)="openNewComment()">New Comment</button>
+    </div>
+    
+    <div *ngIf="newComment">
+        <app-new-comment [post]="post"></app-new-comment>
+        <p id="cancelButton" (click)="closeNewComment()">Cancel</p>
+    </div>
+    <hr>
+    <div *ngIf="comments">
+        <app-comment-list [comments]="comments"></app-comment-list>
+    </div>
 </div>
