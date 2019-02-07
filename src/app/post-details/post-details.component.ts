@@ -22,7 +22,11 @@ export class PostDetailsComponent implements OnInit {
         this.post = post;
       });
       this.postService.getComments(postId).subscribe((comments) => {
-        this.comments = comments;
+        // console.table(comments);
+        let sorted = Comment.sortComments(comments);
+        this.comments = sorted;
+        // console.table(sorted);
+        // debugger;
       });
     });
   }
@@ -30,8 +34,8 @@ export class PostDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
-  // openNewComment(){
-  //   this.newComment=true;
-  // }
+  openNewComment(){
+    // this.newComment=true;
+  }
 
 }

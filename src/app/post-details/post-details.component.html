@@ -11,8 +11,6 @@
     <app-new-comment></app-new-comment>
 </div>
 
-<div *ngFor="let comment of comments">
-    <div>
-        <h6>{{comment.body}}</h6>
-    </div>
+<div>
+    <app-comment-details *ngFor="let comment of comments" [comment]="comment"></app-comment-details>
 </div>
