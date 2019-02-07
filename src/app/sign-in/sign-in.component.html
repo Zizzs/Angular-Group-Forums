@@ -4,23 +4,23 @@
   <div id="mainDiv" class="displayTable">
         <div class="displayTableCell">
           <div class="authBlock">
-            <h3>Sign In</h3>
+            <!-- <h3>Sign In</h3>
             <div class="formGroup">
               <input type="text" class="formControl" placeholder="Username" #userName required>
             </div>
       
             <div class="formGroup">
               <input type="password" class="formControl" placeholder="Password" #userPassword required>
-            </div>
+            </div> -->
       
-            <!-- Calling SignIn Api from AuthService -->
+            <!-- Calling SignIn Api from AuthService
             <div id="mainForm" class="formGroup">
               <input type="button" class="button" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-            </div>
+            </div> -->
       
-            <div class="formGroup">
+            <!-- <div class="formGroup">
               <span class="or"><span class="orInner">Or</span></span>
-            </div>
+            </div> -->
       
             <!-- Calling GoogleAuth Api from AuthService -->
             <div class="formGroup">
@@ -30,14 +30,14 @@
               </button>
             </div>
             <br>
-            <div class="forgotPassword">
+            <!-- <div class="forgotPassword">
               <button class="button" routerLink="/forgot-password">Forgot Password?</button>
-            </div>
+            </div> -->
           </div>
-          <br>
+          <!-- <br>
           <div class="redirectToLogin">
             <span>Don't have an account?<br><button class="button redirect" routerLink="/register-user"> Sign Up</button></span>
-          </div>
+          </div> -->
           <br>
           <div class="redirectToLogin">
             <span>Don't have an account?<br><button class="button redirect" routerLink="/home"> Go back to home as a Guest</button></span>

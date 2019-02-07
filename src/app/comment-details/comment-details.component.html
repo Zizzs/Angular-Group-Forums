@@ -19,7 +19,7 @@
 
     <hr>
     <div id="childrenComments">
-        <app-comment-details *ngFor="let child of comment.children" [comment]="child"></app-comment-details>
+        <app-comment-details *ngFor="let child of comment.children | sortByTimestamp" [comment]="child"></app-comment-details>
 
 
 
