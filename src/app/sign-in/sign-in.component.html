@@ -1,6 +1,5 @@
-<div class="displayTable">
+<div id="mainDiv" class="displayTable">
   <div class="displayTableCell">
-
     <div class="authBlock">
       <h3>Sign In</h3>
       <div class="formGroup">
@@ -12,8 +11,8 @@
       </div>
 
       <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+      <div id="mainForm" class="formGroup">
+        <input type="button" class="button" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
       </div>
 
       <div class="formGroup">
@@ -22,22 +21,23 @@
 
       <!-- Calling GoogleAuth Api from AuthService -->
       <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+        <button type="button" class="button googleBtn" (click)="authService.GoogleAuth()">
           <i class="fab fa-google-plus-g"></i>
           Log in with Google
         </button>
       </div>
-
+      <br>
       <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
+        <button routerLink="/forgot-password">Forgot Password?</button>
       </div>
     </div>
-
+    <br>
     <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+      <span>Don't have an account?<br><button class="redirect" routerLink="/register-user"> Sign Up</button></span>
     </div>
+    <br>
     <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/home"> Go back to home as a Guest</span></span>
+      <span>Don't have an account?<br><button class="redirect" routerLink="/home"> Go back to home as a Guest</button></span>
     </div>
 
   </div>
