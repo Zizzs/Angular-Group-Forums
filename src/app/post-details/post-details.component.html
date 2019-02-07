@@ -8,7 +8,7 @@
     <div id="postBody">{{post?.body}}</div>
     <p><strong>{{post?.user}}</strong></p>
     <hr>
-    <div *ngIf="authService.isLoggedIn">
+    <div *ngIf="authService.isLoggedIn && !newComment">
         <button class="button" (click)="openNewComment()">New Comment</button>
     </div>
     
