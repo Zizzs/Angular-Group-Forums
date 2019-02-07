@@ -35,7 +35,11 @@ export class PostDetailsComponent implements OnInit {
   }
 
   openNewComment(){
-    this.newComment=true;
+    this.newComment = true;
+  }
+
+  closeNewComment() {
+    this.newComment = false;
   }
 
 }

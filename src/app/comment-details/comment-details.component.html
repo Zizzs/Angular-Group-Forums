@@ -2,14 +2,16 @@
   <p>{{comment.body}}</p>
   <p *ngIf="comment.parentId"></p>
   <div>
-    {{comment.children.length}} replies.
+    <strong>{{comment.user}}</strong><br>
+    {{comment.children.length}} replies
+    <br>
 
     <!-- attempt to insert comment button inside comments -->
     <div *ngIf="authService.isLoggedIn">
-      <p (click)="replyToComment()">Reply</p>
+      <p *ngIf="!replyIsTrue" id="replyLink" (click)="replyToComment()">Reply</p>
       <div *ngIf="replyIsTrue" >
           <app-comment-reply [parent]="comment"></app-comment-reply>
-          <p (click)="cancelReply()">Cancel</p>
+          <p id="cancelLink" (click)="cancelReply()">Cancel</p>
       </div>
     </div>
 

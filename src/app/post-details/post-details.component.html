@@ -6,15 +6,17 @@
     </div>
 
     <div id="postBody">{{post?.body}}</div>
-    <p>{{post?.user}}</p>
+    <p><strong>{{post?.user}}</strong></p>
+    <hr>
     <div *ngIf="authService.isLoggedIn">
         <button class="button" (click)="openNewComment()">New Comment</button>
     </div>
-    <hr>
+    
     <div *ngIf="newComment">
         <app-new-comment [post]="post"></app-new-comment>
+        <p id="cancelButton" (click)="closeNewComment()">Cancel</p>
     </div>
-
+    <hr>
     <div *ngIf="comments">
         <app-comment-list [comments]="comments"></app-comment-list>
     </div>

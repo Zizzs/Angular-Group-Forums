@@ -11,3 +11,7 @@
 #mainBlock {
     margin-left: 25px;
 }
+
+#cancelButton:hover {
+    color: #ff5252;
+}
