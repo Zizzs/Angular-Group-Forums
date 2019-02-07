@@ -16,7 +16,9 @@ export class Comment {
     public children: Comment[];
 
     //sorts a one dimensional list of comments into a hierarchical structure for easy nesting
-    public static sortComments(unsorted: Comment[]):Comment[]{
+    public static sortComments(input: Comment[]):Comment[]{
+        let unsorted = [...input];
+
         let result: Comment[] = [];
 
         //function to check if a comment has no remaining unsorted children
