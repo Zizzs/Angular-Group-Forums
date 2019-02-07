@@ -1,1 +1,1 @@
-<app-comment-details *ngFor="let comment of (comments | commentSort)" [comment]="comment"></app-comment-details>
+<app-comment-details *ngFor="let comment of (comments | commentSort | sortByTimestamp)" [comment]="comment"></app-comment-details>
