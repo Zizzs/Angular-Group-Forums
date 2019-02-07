@@ -21,3 +21,7 @@ body {
     background-color: #e7e7e7;
   }
 
+  .button:hover{
+    color: #ff5252;
+  }
+
