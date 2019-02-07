@@ -65,5 +65,13 @@ export class Comment {
         //return the result once all comments have been sorted
         return result;
     }
+
+    public getTimestampDate(){
+        if(this.timestamp){
+            return new Date(this.timestamp);
+        } else {
+            return null;
+        }
+    }
 }
 

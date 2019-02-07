@@ -3,7 +3,8 @@
   <p *ngIf="comment.parentId"></p>
   <div>
     <strong>{{comment.user}}</strong><br>
-    {{comment.children.length}} replies
+    {{comment.children.length}} replies<br>
+    {{comment.getTimestampDate()}}
     <br>
 
     <!-- attempt to insert comment button inside comments -->

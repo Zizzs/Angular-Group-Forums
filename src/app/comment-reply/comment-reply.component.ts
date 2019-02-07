@@ -18,7 +18,7 @@ export class CommentReplyComponent implements OnInit {
   }
 
   makeCommentReply(body) {
-    let comment = new Comment(body, this.authService.userData.displayName, this.parent.postId, this.parent.id);
+    let comment = new Comment(body, this.authService.userData.displayName, this.parent.postId, Date.now(), this.parent.id);
     this.postService.createComment(comment, this.parent.postId);
   }
 }
