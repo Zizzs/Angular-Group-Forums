@@ -18,6 +18,7 @@ export class TopicDetailsComponent implements OnInit {
   topicDescription: string;
   topicId;
   topic: Topic;
+  comments: Comment[];
 
   posts: Post[];
   newThread = false;
