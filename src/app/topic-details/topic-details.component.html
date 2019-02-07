@@ -20,6 +20,7 @@
     <div (click) = "goToPostDetailPage(post)" class="postCard">
         <p class="postTitle">{{post.title}}</p>
         <p>{{post.body}}</p>
+        <p><strong>{{post.user}}</strong></p>
         <p><small>{{post.getTimestampDate()}}</small></p>
     </div>
 </div>
