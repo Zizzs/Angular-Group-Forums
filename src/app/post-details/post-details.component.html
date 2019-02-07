@@ -1,16 +1,21 @@
-<p>{{post?.title}}</p>
-<p>{{post?.body}}</p>
+
+<div>
+    <div>
+        <p id="postTitle">{{post?.title}}</p>
+    </div>
+</div>
+
+<div id="postBody">{{post?.body}}</div>
 <p>{{post?.user}}</p>
-<p>{{post?.id}}</p>
+
 
 <div>
     <button class="button" (click)="openNewComment()">New Comment</button>
 </div>
-
 <div  *ngIf="newComment">
-    <app-new-comment></app-new-comment>
+    <app-new-comment [post]="post"></app-new-comment>
 </div>
-
+<hr class="postHr">
 <div *ngFor="let comment of comments">
     <div>
         <h6>{{comment.body}}</h6>

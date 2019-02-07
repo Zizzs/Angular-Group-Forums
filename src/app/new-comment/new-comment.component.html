@@ -1,4 +1,6 @@
 <div>
+    <p>New Comment</p>
     <p>Body</p>
-    <input>
+    <textarea id="textArea" #newBody></textarea>
+    <button (click)="makeComment(newBody.value); newBody.value=''">Post</button>
   </div>

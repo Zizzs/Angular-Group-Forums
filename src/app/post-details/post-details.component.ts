@@ -13,6 +13,7 @@ export class PostDetailsComponent implements OnInit {
 
   public post: Post;
   public comments: Comment[];
+  newComment = false;
 
 
   constructor(private route: ActivatedRoute, private postService: PostService) { 
@@ -30,8 +31,8 @@ export class PostDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
-  // openNewComment(){
-  //   this.newComment=true;
-  // }
+  openNewComment(){
+    this.newComment=true;
+  }
 
 }
