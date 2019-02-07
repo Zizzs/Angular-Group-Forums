@@ -3,6 +3,7 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { PostService } from '../services/post.service';
 import { Post } from '../models/post.model';
 import { Comment } from '../models/comment.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-details',
@@ -13,6 +14,7 @@ export class PostDetailsComponent implements OnInit {
 
   public post: Post;
   public comments: Comment[];
+  public commentsObservable: Observable<Comment[]>;
 
 
   constructor(private route: ActivatedRoute, private postService: PostService) { 
@@ -22,11 +24,7 @@ export class PostDetailsComponent implements OnInit {
         this.post = post;
       });
       this.postService.getComments(postId).subscribe((comments) => {
-        // console.table(comments);
-        let sorted = Comment.sortComments(comments);
-        this.comments = sorted;
-        // console.table(sorted);
-        // debugger;
+        this.comments = comments;
       });
     });
   }

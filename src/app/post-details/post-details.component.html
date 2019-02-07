@@ -11,6 +11,6 @@
     <app-new-comment></app-new-comment>
 </div>
 
-<div>
-    <app-comment-details *ngFor="let comment of comments" [comment]="comment"></app-comment-details>
+<div *ngIf="comments">
+    <app-comment-list [comments]="comments"></app-comment-list>
 </div>

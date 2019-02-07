@@ -11,7 +11,6 @@ export class CommentDetailsComponent implements OnInit {
   @Input() comment: Comment;
 
   ngOnInit() {
-    console.log(`Initialized comment detail component with comment ${this.comment}`);
   }
 
 }
