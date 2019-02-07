@@ -7,7 +7,7 @@
 </div>
 
 <div>
-    <p> <button class="button" (click)="openNewThread()">Create a new post</button></p>
+    <p> <button class="button" *ngIf="authService.isLoggedIn" (click)="openNewThread()">Create a new post</button></p>
 </div>
 <div  *ngIf="newThread">
     <app-new-post></app-new-post>

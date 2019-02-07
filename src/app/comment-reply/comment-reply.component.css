@@ -1,3 +1,7 @@
+#textArea {
+    margin-right: 10px;
+}
+
 *:focus {
     outline: 0;
     outline: none;

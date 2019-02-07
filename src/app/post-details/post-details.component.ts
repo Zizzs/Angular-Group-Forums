@@ -4,6 +4,7 @@ import { PostService } from '../services/post.service';
 import { Post } from '../models/post.model';
 import { Comment } from '../models/comment.model';
 import { Observable } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-post-details',
@@ -18,7 +19,7 @@ export class PostDetailsComponent implements OnInit {
   newComment = false;
 
 
-  constructor(private route: ActivatedRoute, private postService: PostService) { 
+  constructor(private route: ActivatedRoute, private postService: PostService, private authService: AuthService) { 
     this.route.params.forEach((urlParameters) => {
       let postId = urlParameters['id'];
       this.postService.getPost(postId).subscribe((post) => {

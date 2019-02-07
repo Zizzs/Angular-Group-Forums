@@ -24,6 +24,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
+import { CommentSortPipe } from './comment-sort.pipe';
+import { CommentReplyComponent } from './comment-reply/comment-reply.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { CommentListComponent } from './comment-list/comment-list.component';
     SignInComponent,
     ForgotPasswordComponent,
     DashboardComponent,
-    CommentListComponent
+    CommentListComponent,
+    CommentSortPipe,
+    CommentReplyComponent
   ],
   imports: [
     BrowserModule,

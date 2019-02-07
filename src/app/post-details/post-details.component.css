@@ -7,3 +7,7 @@
 #postBody {
     overflow-y: scroll;
 }
+
+#mainBlock {
+    margin-left: 25px;
+}

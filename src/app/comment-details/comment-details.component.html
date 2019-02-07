@@ -1,10 +1,25 @@
 <div>
   <p>{{comment.body}}</p>
-  <p><small>id: {{comment.id}}</small></p>
-  <p *ngIf="comment.parentId"><small>(child of {{comment.parentId}})</small></p>
+  <p *ngIf="comment.parentId"></p>
   <div>
     {{comment.children.length}} replies.
+
+    <!-- attempt to insert comment button inside comments -->
+    <div *ngIf="authService.isLoggedIn">
+      <p (click)="replyToComment()">Reply</p>
+      <div *ngIf="replyIsTrue" >
+          <app-comment-reply [parent]="comment"></app-comment-reply>
+          <p (click)="cancelReply()">Cancel</p>
+      </div>
+    </div>
+
+
     <hr>
-    <app-comment-details *ngFor="let child of comment.children" [comment]="child"></app-comment-details>
+    <div id="childrenComments">
+        <app-comment-details *ngFor="let child of comment.children" [comment]="child"></app-comment-details>
+
+
+
+    </div>
   </div>
 </div>
