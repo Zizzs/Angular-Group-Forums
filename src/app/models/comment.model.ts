@@ -2,9 +2,9 @@ export class Comment {
     constructor(public body: string, 
         public user: string, 
         public postId: string, 
-        public parentId: string = null, 
+        public timestamp: number, 
+        public parentId: string = null,
         public id: string = null
-         //public date: Date
     ){
         this.children = [];
     }

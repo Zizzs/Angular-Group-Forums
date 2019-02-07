@@ -25,18 +25,16 @@ export class NewCommentComponent implements OnInit {
   }
 
   makeComment(body) {
-    let comment = new Comment(body, this.authService.userData.displayName, this.post.id);
+    let comment = new Comment(body, this.authService.userData.displayName, this.post.id, Date.now());
     this.postService.createComment(comment, this.post.id);
   }
 }
 
 
-// export class Comment {
-//   constructor(public body: string, 
-//       public user: string, 
-//       public postId: string, 
-//       public parentId: string = null, 
-//       public id: string = null
-//        //public date: Date
-//   ){}
+// constructor(public body: string, 
+//   public user: string, 
+//   public postId: string, 
+//   public timestamp: number, 
+//   public parentId: string = null,
+//   public id: string = null
      

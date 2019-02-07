@@ -67,7 +67,7 @@ export class PostService {
       for(let action of actions){
         let data:any = action.payload.doc.data();
         let id = action.payload.doc.id;
-        result.push(new Comment(data.body, data.user, postId, data.parent ? data.parent.id: null, id));
+        result.push(new Comment(data.body, data.user, postId, data.timestamp, data.parent ? data.parent.id: null, id));
       }
       return result;
     }));
@@ -119,6 +119,7 @@ export class PostService {
       let promise = comments.add({
         body: comment.body,
         user: comment.user,
+        timestamp: comment.timestamp,
         parent: parentRef ? parentRef : null
       });
 
