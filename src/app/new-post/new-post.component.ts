@@ -11,10 +11,10 @@ import { AuthService } from '../services/auth.service';
 })
 export class NewPostComponent implements OnInit {
 
-  postId;
+  public topicId;
   constructor(private route: ActivatedRoute, private postService: PostService, private authService: AuthService) { 
     this.route.params.forEach((urlParameters) => {
-      this.postId = urlParameters['topic'];
+      this.topicId = urlParameters['topic'];
     });
   }
 
@@ -23,7 +23,7 @@ export class NewPostComponent implements OnInit {
 
   makePost(title, body) {
     //console.log(this.postId);
-    let post = new Post(title, body, this.authService.userData.displayName, this.postId);
+    let post = new Post(title, body, this.authService.userData.displayName, this.topicId, Date.now());
     this.postService.createPost(post);
   }
 }
