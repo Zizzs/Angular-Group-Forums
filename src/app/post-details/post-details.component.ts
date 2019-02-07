@@ -3,6 +3,7 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { PostService } from '../services/post.service';
 import { Post } from '../models/post.model';
 import { Comment } from '../models/comment.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-details',
@@ -13,6 +14,7 @@ export class PostDetailsComponent implements OnInit {
 
   public post: Post;
   public comments: Comment[];
+  public commentsObservable: Observable<Comment[]>;
   newComment = false;
 
 

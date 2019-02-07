@@ -15,9 +15,7 @@
 <div  *ngIf="newComment">
     <app-new-comment [post]="post"></app-new-comment>
 </div>
-<hr class="postHr">
-<div *ngFor="let comment of comments">
-    <div>
-        <h6>{{comment.body}}</h6>
-    </div>
+
+<div *ngIf="comments">
+    <app-comment-list [comments]="comments"></app-comment-list>
 </div>

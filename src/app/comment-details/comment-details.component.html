@@ -1,7 +1,10 @@
 <div>
+  <p>{{comment.body}}</p>
+  <p><small>id: {{comment.id}}</small></p>
+  <p *ngIf="comment.parentId"><small>(child of {{comment.parentId}})</small></p>
   <div>
-    <p>Parent Comment Body</p>
-    <p>Parent Comment User</p>
-    
+    {{comment.children.length}} replies.
+    <hr>
+    <app-comment-details *ngFor="let child of comment.children" [comment]="child"></app-comment-details>
   </div>
 </div>

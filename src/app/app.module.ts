@@ -23,6 +23,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SignUpComponent,
     SignInComponent,
     ForgotPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    CommentListComponent
   ],
   imports: [
     BrowserModule,
