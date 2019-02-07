@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { array } from '../mock-topics';
 import { PostService } from '../services/post.service';
 import { Topic } from '../models/topic.model';
 

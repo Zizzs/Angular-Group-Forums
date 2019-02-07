@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
-import { postsImport } from '../mock-posts';
 import { Location } from '@angular/common';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { PostService } from '../services/post.service';

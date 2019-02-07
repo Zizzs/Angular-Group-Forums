@@ -54,7 +54,7 @@ export class PostService {
 
       let data:any = action.payload.data();
       let id = action.payload.id;
-      return new Post(data.title, data.body, data.user, data.topic.id, id);
+      return new Post(data.title, data.body, data.user, data.topic.id, data.timestamp, id);
     }));
   }
 
@@ -67,7 +67,7 @@ export class PostService {
       for(let action of actions){
         let data:any = action.payload.doc.data();
         let id = action.payload.doc.id;
-        result.push(new Comment(data.body, data.user, postId, data.parent ? data.parent.id: null, id));
+        result.push(new Comment(data.body, data.user, postId, data.timestamp, data.parent ? data.parent.id: null, id));
       }
       return result;
     }));
@@ -86,7 +86,8 @@ export class PostService {
         title: post.title,
         body: post.body,
         user: post.user,
-        topic: ref
+        topic: ref,
+        timestamp: post.timestamp
       });
   
       let id = (await promise).id;
@@ -118,6 +119,7 @@ export class PostService {
       let promise = comments.add({
         body: comment.body,
         user: comment.user,
+        timestamp: comment.timestamp,
         parent: parentRef ? parentRef : null
       });
 
@@ -157,7 +159,7 @@ export class PostService {
   private parsePost(action: DocumentChangeAction<any>): Post{
     let data = action.payload.doc.data();
     let id = action.payload.doc.id;
-    return new Post(data.title, data.body, data.user, data.topic.id, id);
+    return new Post(data.title, data.body, data.user, data.topic.id, data.timestamp, id);
   }
 
   private async validateRef(collection: string, refId: string){
