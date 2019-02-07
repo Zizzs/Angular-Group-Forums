@@ -26,6 +26,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { CommentSortPipe } from './comment-sort.pipe';
 import { CommentReplyComponent } from './comment-reply/comment-reply.component';
+import { SortByTimestampPipe } from './sort-by-timestamp.pipe';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { CommentReplyComponent } from './comment-reply/comment-reply.component';
     DashboardComponent,
     CommentListComponent,
     CommentSortPipe,
-    CommentReplyComponent
+    CommentReplyComponent,
+    SortByTimestampPipe
   ],
   imports: [
     BrowserModule,
