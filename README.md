@@ -1,4 +1,4 @@
-# _DITTER: the second page of the internet_
+# _TIDDER: the second page of the internet_
 
 #### A forum for all people and all topics
 
